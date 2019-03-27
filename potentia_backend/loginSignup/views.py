@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from loginSignup.forms import UserForm
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
-from .forms import addSignupForm
+from .forms import AddSignupForm
 
 
 def index(request):
@@ -26,19 +26,22 @@ def register(request):
     registered = False
     if request.method == 'POST':
         user_form = UserForm(data=request.POST)
-        add_form = addSignupForm(data = request.POST)
+        add_form = AddSignupForm(data = request.POST)
         if user_form.is_valid() and add_form.is_valid():
             user = user_form.save()
             user.set_password(user.password)
             user.save()
-            add = add_form.save()
-            add.save()
+            adf = add_form.save(commit=False)
+            adf.user = user
+            adf.save()
             registered = True
+            login(request, user)
+            return redirect('index')
         else:
             print(user_form.errors)
     else:
         user_form = UserForm()
-        add_form = addSignupForm()
+        add_form = AddSignupForm()
     return render(request, 'loginSignup/registration.html',
                   {'user_form': user_form, 'add_form': add_form,
                            'registered': registered})

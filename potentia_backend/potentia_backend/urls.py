@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^special/', views.special, name='special'),
     url(r'^loginSignup/', include('loginSignup.urls')),
     url(r'^logout/$', views.user_logout, name='logout'),
+    url(r'post/', include('post.urls'))
 ]

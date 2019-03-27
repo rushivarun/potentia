@@ -5,6 +5,8 @@
     <h1>Welcome to the Djungle !</h1>
     {% if user.is_authenticated %}
         <h2>Hello {{ user.username }}</h2>
+        <a href="{% url 'post:My_Trans' %}"><button>My Transactions</button></a>
+        <a href="{% url 'post:Add_Trans' %}"><button>Add a New Transaction</button></a>
     {% else %}
         <h2>Register or Login if you'd like to</h2>
     {% endif %}

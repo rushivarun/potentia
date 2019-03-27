@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a New Transaction</title>
+</head>
+<body>
+<h1>Add A New Transaction</h1>
+<h4>Note: The Current Conversion Rate Is: 1 Unit Energy = {{ rate }} Potentia</h4>
+<br><br><br><br>
+<form method="post" action="{% url 'post:Add_Trans' %}">
+    {% csrf_token %}
+    {{ trans_form.as_p }}
+    <input type="submit">
+</form>
+
+
+</body>
+</html>

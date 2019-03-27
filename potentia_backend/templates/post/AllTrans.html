@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Transactions</title>
+</head>
+<body>
+<h5><a href="{% url 'index' %}">Go Back</a> </h5>
+<h1>These Are All The Transactions You Have Made</h1>
+<br>
+<br>
+<br>
+{% for tra in all_trans %}
+    <p>To: {{ tra.tosenduser }}</p>
+    <p>Amount: {{ tra.amount }}</p>
+    <p>Cost: {{ tra.cost }}</p>
+<br><br><br><br><br>
+{% endfor %}
+</body>
+</html>
