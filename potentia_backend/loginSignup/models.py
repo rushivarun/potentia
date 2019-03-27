@@ -10,10 +10,11 @@ from django.dispatch import receiver
 
 
 class AddSignup(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='additional')
     address = models.CharField(max_length = 100)
     phone = models.IntegerField()
     renewable_source = models.CharField(max_length = 100)
+    Potentia = models.IntegerField(default=0)
 
 #
 # @receiver(post_save, sender=User)

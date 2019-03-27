@@ -6,14 +6,19 @@
 </head>
 <body>
 <h1>Add A New Transaction</h1>
-<h4>Note: The Current Conversion Rate Is: 1 Unit Energy = {{ rate }} Potentia</h4>
+<h4>Note: The Current Conversion Rate Is: 1 Flare = {{ rate }} Potentia </h4>
+<h4>Also, 1 Flare = 1 KWH of Energy</h4>
 <br><br><br><br>
 <form method="post" action="{% url 'post:Add_Trans' %}">
     {% csrf_token %}
     {{ trans_form.as_p }}
     <input type="submit">
 </form>
+{% if fail %}
+    <h1>The User You Want To Send The Energy To... Cannot Afford It</h1>
 
+
+{% endif %}
 
 </body>
 </html>
