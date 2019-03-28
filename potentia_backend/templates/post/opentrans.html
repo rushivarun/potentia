@@ -9,7 +9,13 @@
     <p>Source: {{ OpenTran.user.username }}</p>
     <p>Amount Of Energy: {{ OpenTran.amount }}</p>
     <p>Cost: {{ OpenTran.cost }}</p>
-    <a href="{% url 'post:Make_Trans' pk = OpenTran.trans_id %}"> Completed </a>
+    <p>Transaction ID: {{ OpenTran.trans_id }}</p>
+     <form method="POST" action="{% url 'post:Make_Trans' %}">
+             {% csrf_token %}
+            <input type="hidden" value="{{ OpenTran.trans_id }}" name="pk" />
+            <input type="submit" value="Buy" />
+    </form>
+{#    <a href="{% url 'post:Make_Trans' OpenTran.trans_id %}"> Buy </a>#}
 
 {% endfor %}
 

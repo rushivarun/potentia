@@ -119,8 +119,9 @@ class open_trans(ListView):
     queryset = Transactions.objects.filter(status__exact=False)
 
 
-def make_trans(request, pk):
-    trans = Transactions.objects.filter(trans_id__exact=pk)
+def make_trans(request):
+    pk = request.POST.get('pk', None)
+    trans = Transactions.objects.get(trans_id__exact=pk)
     if trans.cost <= request.user.additional.Potentia:
         trans.tosenduser = request.user
         trans.sent_transfer_tx, trans.sent_creation_tx = trasact_block(trans.user,trans.tosenduser,trans.amount)
