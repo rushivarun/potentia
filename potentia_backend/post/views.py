@@ -9,7 +9,7 @@ from post.models import Transactions
 rate = 8
 
 def add_transaction(request):
-
+    fail= False
     if request.method == 'POST':
         trans_form = AddTransactionForm(data=request.POST)
         if trans_form.is_valid():
@@ -30,7 +30,7 @@ def add_transaction(request):
             return HttpResponseRedirect(request, 'AllTrans')
     else:
         trans_form = AddTransactionForm()
-    return render(request, 'post/AddTrans.html', {'trans_form':trans_form, 'rate':rate})
+    return render(request, 'post/AddTrans.html', {'trans_form':trans_form, 'rate':rate, 'fail':fail})
 
 
 def my_trans(request):
