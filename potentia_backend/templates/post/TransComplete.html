@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success!</title>
+</head>
+<body>
+<h1>The Transaction Has Been Completed Succesfully!</h1>
+<h3>Here are the details:</h3>
+<p>Source: {{ trans.user }}</p>
+<p>Receiver: {{ trans.tosenduser }}</p>
+<p>Energy Transfered: {{ trans.amount }} Flares</p>
+<p>Cost: {{ trans.cost }} Potentia</p>
+<p>Transfer TX: {{ trans.sent_creation_tx }}</p>
+<p>Creation TX: {{ trans.sent_creation_tx }}</p>
+<br><br><br><br><br>
+<h3>Click the button below to go back Home</h3>
+<a href="{% url 'index' %}"><button>Home</button></a>
+</body>
+</html>

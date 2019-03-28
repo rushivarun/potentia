@@ -9,7 +9,7 @@
 <h1>These Are All The Transactions You Have Made</h1>
 <h4>Note: The Current Conversion Rate Is: 1 Flare = {{ rate }} Potentia </h4>
 <h4>Also, 1 Flare = 1 KWH of Energy</h4>
-<h4>You have {{ PotentiaWallet }} Potentia. You Can Send a Maximum of {{ Flare }}</h4>
+<h3>You Have {{ PotentiaWallet }} Potentia</h3>
 <br><br><br><br>
 <br>
 <br>
@@ -18,6 +18,8 @@
     <p>To: {{ tra.tosenduser }}</p>
     <p>Amount: {{ tra.amount }}</p>
     <p>Cost: {{ tra.cost }}</p>
+    <p>Creation TX: {{ tra.sent_creation_tx }}</p>
+    <p>Transfer TX: {{ tra.sent_transfer_tx }}</p>
 <br><br><br><br><br>
 {% endfor %}
 </body>

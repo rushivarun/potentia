@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Transactions</title>
+</head>
+<body>
+{% for OpenTran in OpenTrans %}
+    <p>Source: {{ OpenTran.user.username }}</p>
+    <p>Amount Of Energy: {{ OpenTran.amount }}</p>
+    <p>Cost: {{ OpenTran.cost }}</p>
+    <a href="{% url 'post:Make_Trans' pk = OpenTran.trans_id %}"> Completed </a>
+
+{% endfor %}
+
+</body>
+</html>

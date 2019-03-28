@@ -7,6 +7,7 @@
         <h2>Hello {{ user.username }}</h2>
         <a href="{% url 'post:My_Trans' %}"><button>My Transactions</button></a>
         <a href="{% url 'post:Add_Trans' %}"><button>Add a New Transaction</button></a>
+        <a href="{% url 'post:Open_Trans' %}"><button>View Open Transactions</button></a>
     {% else %}
         <h2>Register or Login if you'd like to</h2>
     {% endif %}

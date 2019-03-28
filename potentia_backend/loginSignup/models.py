@@ -15,6 +15,7 @@ class AddSignup(models.Model):
     phone = models.IntegerField()
     renewable_source = models.CharField(max_length = 100)
     Potentia = models.IntegerField(default=0)
+    flares = models.IntegerField(default=0)
 
 #
 # @receiver(post_save, sender=User)
