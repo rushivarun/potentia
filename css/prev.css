@@ -1,1 +1,84 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  padding:20px;
+  font:lighter 1.2em/100% 'Open Sans';
+  text-align: left;
+  background:rgb(68, 236, 138);
+}
+
+.faq {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.centerplease {
+  text-align:center;
+  margin: 0 auto;
+  font-size: 40px;
+}
+
+.question {
+  color:#fff;
+  font-weight: normal;
+  position: relative;
+  background: #246b3f;
+  margin: 0 auto;
+  opacity: .9;
+  padding: 10px 10px 10px 50px;
+  display: block;
+  cursor: pointer;
+  text-shadow:-1px 1px 0px #48c772, -2px 2px 0px #2a6338;
+}
+
+.answers {
+    color:#fff;
+
+  border-top: 1px solid #2a633b;
+  background: #246b3f;
+  padding: 0px 15px;
+  margin: 0 0 7px 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  position: relative;
+  opacity: 0;
+  -webkit-transition: .7s ease;
+  -moz-transition: .7s ease;
+  -o-transition: .7s ease;
+  transition: .7s ease;
+}
+
+.questions:checked ~ .answers{
+  height: auto;
+  opacity: 1;
+  padding: 15px;
+}
+
+.plus {
+  position: absolute;
+  margin-left: 10px;
+  z-index: 5;
+  font-size: 1.8em;
+  line-height: 100%;
+  -webkit-user-select: none;    
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.questions:checked ~ .plus {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.questions {
+  display: none;
+}
