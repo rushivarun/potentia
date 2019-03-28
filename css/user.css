@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700);
+
 .container {
     position: relative;
     margin-top: 50px;
@@ -17,7 +19,7 @@
   
   .container:hover .overlay {
     display: block;
-    background: rgba(0, 0, 0, .3);
+    background: rgba(0, 0, 0, 1);
   }
   
   img {
@@ -31,8 +33,8 @@
     position: absolute;
     width: 300px;
     left: 0;
-    top: 270px;
-    font-weight: 400;
+    top: 290px;
+    font-weight: 600;
     font-size: 20px;
     text-align: center;
     text-transform: uppercase;
@@ -68,14 +70,13 @@
     opacity: 1;
   }
   
-  .column {
-    float: left;
-    width: 50%;
-    padding-top: 100px;
+
+  p {
+    margin-bottom: 0.5em;
   }
   
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  a,
+  a:visited {
+    text-decoration: none;
+    color: #00AE68;
   }
