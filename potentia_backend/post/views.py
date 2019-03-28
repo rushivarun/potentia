@@ -82,7 +82,8 @@ def trasact_block(sender, reciever, flares):
     )
 
     sent_transfer_tx = bdb.transactions.send_commit(fulfilled_transfer_tx)
-    return sent_transfer_tx, sent_creation_tx
+    q=[sent_transfer_tx, sent_creation_tx]
+    return q
 
 
 def add_transaction(request):
@@ -124,7 +125,12 @@ def make_trans(request):
     trans = Transactions.objects.get(trans_id__exact=pk)
     if trans.cost <= request.user.additional.Potentia:
         trans.tosenduser = request.user
-        trans.sent_transfer_tx, trans.sent_creation_tx = trasact_block(trans.user,trans.tosenduser,trans.amount)
+        a = trasact_block(trans.user.username,trans.tosenduser.username,trans.amount)
+        trans.sent_transfer_tx = a[0]
+        trans.sent_creation_tx = a[1]
+        trans.status = True
+        request.user.additional.Potentia = request.user.additional.Potentia - trans.cost
+        trans.user.additional.flares = trans.user.additional.flares - trans.amount
         trans.save()
         return render(request, 'post/TransComplete.html',{'trans':trans})
     else:
