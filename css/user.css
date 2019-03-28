@@ -1,10 +1,13 @@
-@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700);
+@import url(https://fonts.googleapis.com/css?family=Lato);
 
+body {
+  font-family: 'Lato';
+}
 .container {
     position: relative;
     margin-top: 50px;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
   }
   
   .overlay {
@@ -24,18 +27,18 @@
   
   img {
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     left: 0;
   }
   
   .title {
     position: absolute;
-    width: 300px;
+    width: 200px;
     left: 0;
-    top: 290px;
+    top: 200px;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
     text-transform: uppercase;
     color: white;
@@ -49,7 +52,7 @@
   
   .button {
     position: absolute;
-    width: 300px;
+    width: 200px;
     left:0;
     top: 180px;
     text-align: center;
@@ -58,7 +61,7 @@
   }
   
   .button a {
-    width: 200px;
+    width: 100px;
     padding: 12px 48px;
     text-align: center;
     color: white;
