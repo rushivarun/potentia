@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  font-family: 'Lato';
+}
+.container {
+    position: relative;
+    margin-top: 50px;
+    width: 200px;
+    height: 200px;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.5s ease;
+  }
+  
+  .container:hover .overlay {
+    display: block;
+    background: rgba(0, 0, 0, 1);
+  }
+  
+  img {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    left: 0;
+  }
+  
+  .title {
+    position: absolute;
+    width: 200px;
+    left: 0;
+    top: 200px;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    z-index: 1;
+    transition: top .5s ease;
+  }
+  
+  .container:hover .title {
+    top: 90px;
+  }
+  
+  .button {
+    position: absolute;
+    width: 200px;
+    left:0;
+    top: 180px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+  
+  .button a {
+    width: 100px;
+    padding: 12px 48px;
+    text-align: center;
+    color: white;
+    border: solid 2px white;
+    z-index: 1;
+  }
+  
+  .container:hover .button {
+    opacity: 1;
+  }
+  
+
+  p {
+    margin-bottom: 0.5em;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: none;
+    color: #00AE68;
+  }
