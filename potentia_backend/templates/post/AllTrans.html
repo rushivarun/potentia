@@ -15,11 +15,12 @@
 <br>
 <br>
 {% for tra in all_trans %}
-    <p>To: {{ tra.tosenduser }}</p>
+    <p>Status: {{ tra.status }}</p>
     <p>Amount: {{ tra.amount }}</p>
     <p>Cost: {{ tra.cost }}</p>
     <p>Creation TX: {{ tra.sent_creation_tx }}</p>
     <p>Transfer TX: {{ tra.sent_transfer_tx }}</p>
+
 <br><br><br><br><br>
 {% endfor %}
 </body>

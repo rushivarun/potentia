@@ -8,7 +8,7 @@ from post.forms import AddTransactionForm
 from post.models import Transactions
 from bigchaindb_driver import BigchainDB
 from bigchaindb_driver.crypto import generate_keypair
-
+from django.db.models import Q
 #rated constants 
 rate = 8
 sender, reciever = generate_keypair(), generate_keypair()
@@ -111,7 +111,7 @@ def add_transaction(request):
 
 def my_trans(request):
     av_flares = request.user.additional.flares
-    all_trans = Transactions.objects.filter(user__exact=request.user).filter(status__exact=True)
+    all_trans = Transactions.objects.filter(Q(user__exact=request.user) | Q(tosenduser__exact=request.user))
     return render(request, 'post/AllTrans.html',{'all_trans':all_trans, 'PotentiaWallet': request.user.additional.Potentia, 'av_flares':av_flares})
 
 class open_trans(ListView):
