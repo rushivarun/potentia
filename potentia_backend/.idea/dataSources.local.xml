@@ -5,5 +5,9 @@
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
       <auth-required>false</auth-required>
     </data-source>
+    <data-source name="Django default" uuid="b65e185e-53e5-46ba-9dee-eafc932f8d93">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
+      <auth-required>false</auth-required>
+    </data-source>
   </component>
 </project>
